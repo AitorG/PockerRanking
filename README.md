@@ -1,4 +1,4 @@
-# PockerRanking
+# PokerRanking
 
 - Ionic 
 - Angular 
