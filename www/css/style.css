@@ -1,0 +1,90 @@
+/* Empty. Add your own CSS if you like */
+.fondoGris{
+	background-color: #F5F5F5;
+}
+.fullWidth{
+	width:100% !important;
+	margin:0 auto;
+}
+.justify{
+	text-align: justify;
+}
+.fullWidth h3{
+	font-size: 20px;
+	margin-bottom:5px !important;
+}
+.noTopMargin{
+	margin-top:0px !important;
+	padding-top:0 !important;
+}
+.marged{
+	margin-bottom:10px;
+}
+.margedFirst{
+	margin-bottom:10px;
+	margin-top:10px;
+}
+.margedLast{
+	margin-bottom:20px;
+}
+.iconSmall{
+	font-size: 24px !important;
+}
+.iconMine{
+	width:auto;
+	height:22px !important;
+	margin-top:12px;
+	margin-left:4px;
+}
+.bgGreen{
+	background-color: #444 !important;
+	color:#D7D7D7 !important;
+}
+.bgWhite{
+	position:relative;
+	bottom:0px;
+	background-color:transparent !important;
+	margin:0;
+	padding:0;
+	height:150px;
+}
+.customTitle{
+	color:#333 !important;
+	font-size:20px;
+}
+.height{
+	margin-top:105px;
+	padding-top:5px;
+	border-top:none !important;
+}
+a.item-content{
+	background-color: #444 !important;
+	color:#D7D7D7 !important;
+	padding-left:60px !important;
+	font-size: 15px !important;
+}
+.item{
+	border-color:#444 !important;
+}
+.title{
+	color:#D7D7D7 !important;
+}
+.ion-navicon{
+	color:#D7D7D7 !important;
+}
+.bar.bar-stable{
+	background-image: linear-gradient(0deg, #fff, #fff 50%, transparent 50%);
+}
+.focused{
+	color:red !important;
+	background-color:white !important;
+}
+.imgMenu{
+	margin:0;
+	padding:0;
+	width:275px;
+	height:150px;
+}
+
+
+
