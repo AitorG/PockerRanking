@@ -1,0 +1,22 @@
+<div id="rankingModal">
+	<label class="item item-input item-select">
+		<div class="input-label">
+			Primero
+		</div>
+				<select> 
+			<option class="selectPlayers" ng-repeat="player in players" ng-value="player.id">{{player.name}}</option>
+		</select>
+	</label>
+	<label class="item item-input">
+		<span class="input-label">Segundo</span>
+		<input type="text" ng-model="palyers.player2" uib-typeahead="player as player.name for player in players">
+	</label>
+	<label class="item item-input">
+		<span class="input-label">Tercero</span>
+		<input type="text" ng-model="palyers.player3" uib-typeahead="player as player.name for player in players">
+	</label>
+	<label class="item item-input">
+		<span class="input-label">Cuarto</span>
+		<input type="text" ng-model="palyers.player4" uib-typeahead="player as player.name for player in players">
+	</label>
+</div>

@@ -126,3 +126,7 @@ a.item-content{
     border-left-width: 1px !important;
 }
 
+.selectPlayers {
+	padding-top: 3px !important;
+	font-weight: normal !important;
+}
