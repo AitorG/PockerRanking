@@ -1,0 +1,67 @@
+{
+	"hands": [
+		{
+			"id": 1,
+			"name": "Escalera Real",
+			"description": "La mano más famosas del poker, una escalera de color al as, es imbatible. Está formada por un as, un rey, una dama, una jota y un diez del mismo palo.",
+			"image": "img/cards-1.jpg"
+		},
+		{
+			"id": 2,
+			"name": "Escalera de color",
+			"description": "Cinco cartas consecutivas del mismo palo. En caso de empate, aquella que finalice en la carta más alta gana.",
+			"image": "img/cards-2.jpg"
+		},
+		{
+			"id": 3,
+			"name": "Poker",
+			"description": "Cuatro cartas del mismo valor y una carta no emparejada o \"kicker\". En caso de empate, el jugador con la carta no emparejada más alta (\"kicker\") gana.",
+			"image": "img/cards-3.jpg"
+		},
+		{
+			"id": 4,
+			"name": "Full",
+			"description": "Tres cartas del mismo valor y una pareja de un mismo valor diferente al anterior. En caso de empate, el mayor de los grupos de tres cartas gana.",
+			"image": "img/cards-4.jpg"
+		},
+		{
+			"id": 5,
+			"name": "Color",
+			"description": "Cinco cartas del mismo palo, no consecutivas. En caso de empate, el jugador con la carta más alta en su mano gana.",
+			"image": "img/cards-5.jpg"
+		},
+		{
+			"id": 6,
+			"name": "Escalera",
+			"description": "Cincon cartas consecutivas de distinto palo. En caso de empate, aquella que finalice en la carta más alta gana.",
+			"image": "img/cards-6.jpg"
+		},
+		{
+			"id": 7,
+			"name": "Trío",
+			"description": "Tres cartas con el mismo valor y dos cartas no emparejadas.. En caso de empate, el jugador con la carta no emparejada (o la segunda carta, de ser necesario) más alta (\"kicker\") gana.",
+			"image": "img/cards-7.jpg"
+				
+		},
+		{
+			"id": 8,
+			"name": "Dobles parejas",
+			"description": "Dos cartas del mismo valor, dos cartas del mismo valor, diferente al anterior, y un \"kicker\". Si los jugadores tienen exactamente las mismas dobles parejas, el \"kicker\" más alto gana.",
+			"image": "img/cards-8.jpg"
+				
+		},
+		{
+			"id": 9,
+			"name": "Pareja",
+			"description": "Dos cartas del mismo palo y tres cartas desemparejadas. En caso de empate, el jugador con la carta no emparejada (o la segunda o tercera carta, de ser necesario) más alta gana.",
+			"image": "img/cards-9.jpg"
+		},
+		{
+			"id": 10,
+			"name": "Carta alta",
+			"description": "Cualquier mano que no esté clasificada en alguna de las categorías anteriores. En caso de empate, la carta más alta gana, como por ejemplo \"as alto\".",
+			"image": "img/cards-10.jpg"
+		}
+	]
+}
+

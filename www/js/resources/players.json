@@ -1,0 +1,44 @@
+[
+	{
+		"id": 1,
+		"name": "Aitor G.",
+		"points": 50,
+		"admin":"true"
+	},
+	{
+		"id": 2,
+		"name": "Iván G.",
+		"points": 100,
+		"admin":"false"
+	},
+	{
+		"id": 3,
+		"name": "Guille F.",
+		"points": 70,
+		"admin":"false"
+	},
+	{
+		"id": 4,
+		"name": "Daniela D.",
+		"points": 70,
+		"admin":"false"
+	},
+	{
+		"id": 5,
+		"name": "Ingrid O.",
+		"points": 45,
+		"admin":"false"
+	},
+	{
+		"id": 6,
+		"name": "Alberto P.",
+		"points": 30,
+		"admin":"false"
+	},
+	{
+		"id": 7,
+		"name": "Marta",
+		"points": 40,
+		"admin":"false"
+	}
+]

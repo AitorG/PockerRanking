@@ -1,0 +1,36 @@
+<ion-view view-title="Jugadores">
+  <ion-content>
+    <div class="card" ng-repeat="player in players">
+	  <div class="item item-text-wrap">
+	  	<div class="row">
+	  		<div class="col-50">
+	    		<h2>{{player.name}}</h2>
+	    		<p>{{player.points}}</p>
+	  		</div>
+	  		<div class="col-50">
+	  			<button class="button button-small button-assertive deleteButton"
+	  			ng-click="deletePlayer(player.id)">
+					<i class="ion-trash-b"></i>
+				</button>
+		  		<button class="button button-small button-energized deleteButton" 
+		  		ng-click="getPlayer(player.id)">
+					<i class="ion-settings"></i>
+				</button> 
+	  		</div>
+	  	</div>
+	  </div>
+	</div>
+
+		<div id="playerModal" style="display:none;">
+	  		<div class="input-group top10">
+			    <span class="input-group-addon" id="basic-addon1">Nombre</span>
+			   	<input type="text" class="form-control inputBootStrap" value="{{player.name}}" placeholder="Nombre ..." id="name" />
+			</div>
+			<div class="input-group top10">
+			    <span class="input-group-addon" id="basic-addon1">Puntos</span>
+			   	<input type="text" class="form-control inputBootStrap" value="{{player.points}}" placeholder="Puntos ..." id="name" />
+			</div>
+	  	</div>
+
+  </ion-content>
+</ion-view>

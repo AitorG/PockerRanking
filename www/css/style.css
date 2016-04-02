@@ -1,90 +1,128 @@
-/* Empty. Add your own CSS if you like */
-.fondoGris{
-	background-color: #F5F5F5;
+/* Helper classes */
+.noborder{
+	border:none !important;
 }
-.fullWidth{
-	width:100% !important;
-	margin:0 auto;
+
+.noMargin {
+	margin: 0 !important;
 }
-.justify{
-	text-align: justify;
+
+.top10{
+	margin-top:10px !important;
 }
-.fullWidth h3{
-	font-size: 20px;
-	margin-bottom:5px !important;
-}
-.noTopMargin{
-	margin-top:0px !important;
-	padding-top:0 !important;
-}
-.marged{
-	margin-bottom:10px;
-}
-.margedFirst{
-	margin-bottom:10px;
-	margin-top:10px;
-}
-.margedLast{
-	margin-bottom:20px;
-}
-.iconSmall{
-	font-size: 24px !important;
-}
+
+
+/* Custom CSS */
+
 .iconMine{
 	width:auto;
-	height:22px !important;
-	margin-top:12px;
-	margin-left:4px;
+	height:16px !important;
 }
-.bgGreen{
-	background-color: #444 !important;
-	color:#D7D7D7 !important;
-}
-.bgWhite{
-	position:relative;
-	bottom:0px;
-	background-color:transparent !important;
-	margin:0;
-	padding:0;
-	height:150px;
-}
-.customTitle{
-	color:#333 !important;
-	font-size:20px;
-}
-.height{
-	margin-top:105px;
-	padding-top:5px;
-	border-top:none !important;
-}
-a.item-content{
-	background-color: #444 !important;
-	color:#D7D7D7 !important;
-	padding-left:60px !important;
-	font-size: 15px !important;
-}
-.item{
-	border-color:#444 !important;
-}
-.title{
-	color:#D7D7D7 !important;
-}
-.ion-navicon{
-	color:#D7D7D7 !important;
-}
-.bar.bar-stable{
-	background-image: linear-gradient(0deg, #fff, #fff 50%, transparent 50%);
-}
-.focused{
-	color:red !important;
-	background-color:white !important;
-}
-.imgMenu{
-	margin:0;
+
+.imgMenu {
+	margin-top:20px;
 	padding:0;
 	width:275px;
 	height:150px;
 }
 
+.ionMenu {
+	margin-top:170px !important;
+}
 
+.customHandImage{
+	max-width:220px;
+	position:relative;
+}
+
+.handText{
+	text-align:center;
+}
+
+.handText p {
+	text-align:justify;
+}
+
+.deleteButton i{
+	font-size:15px !important;
+}
+
+.deleteButton {
+	float:right;
+	margin-left:5px;
+}
+
+.bgBlack{
+	color:#D7D7D7;
+	background-color: #444;
+}
+.bgBlack div span{
+	color:#D7D7D7;
+	background-color: #444;
+
+}
+
+.bgBlack .item-content{
+	color:#D7D7D7;
+	background-color: #444;
+	border: none;
+}
+
+
+a.item-content{
+	background-color: #444;
+	color:#D7D7D7;
+}
+.bgBlack .item{
+	background-color: #444;
+	border-color:#444;
+	color:#D7D7D7;
+}
+
+.activeMenu a{
+	color:#FAFAFA !important;
+	background-color: #333 !important;
+}
+
+.bgBlack ion-item .activated{
+	color:#FAFAFA !important;
+	background-color: #333 !important;
+}
+
+
+/* Doughnut */
+
+.doughnut-legend{
+	margin-left:-25px !important;
+}
+
+.doughnut-legend li{
+	margin:15px 25px 10px 25px;
+}
+
+.doughnut-legend span {
+	position:absolute;
+	text-indent: 25px;
+}
+
+.bootbox.modal { /* fix bug with ionic modal's style */
+	background-color: transparent !important;
+}
+
+.inputBootStrap {
+	padding-left:10px !important;
+	border: 1px solid #ccc !important;
+    border-top-color: rgb(204, 204, 204) !important;
+    border-top-style: solid !important;
+    border-top-width: 1px !important;
+    border-right-color: rgb(204, 204, 204) !important;
+    border-right-style: solid !important;
+    border-right-width: 1px !important;
+    border-bottom-color: rgb(204, 204, 204) !important;
+    border-bottom-style: solid !important;
+    border-bottom-width: 1px !important;
+    border-left-color: rgb(204, 204, 204) !important;
+    border-left-style: solid !important;
+    border-left-width: 1px !important;
+}
 
