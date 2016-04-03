@@ -5,14 +5,17 @@
 	function rankingCtrl($scope, players, $http, $ionicPopup){
 		$scope.labels = [];
 		$scope.data = [];
+		$scope.selectedPlayers = {};
 
 		$scope.players = players;
+		$scope.avaliablePlayers = players;
 		players.sort(compare);
 
 		for (var i = 0; i < players.length; i++) {
 			$scope.labels.push(players[i].name);
 			$scope.data.push(players[i].points);
 		}
+
 		$scope.showModal = function() {
 			var myPopup = $ionicPopup.show({
 				templateUrl: 'templates/addGameModal.html',
