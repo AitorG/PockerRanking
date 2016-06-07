@@ -1,0 +1,19 @@
+{
+  "name": "api-poker-ranking",
+  "version": "1.0.0",
+  "description": "Api for poker ranking",
+  "main": "pokerranking.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "zamarrowski",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.15.1",
+    "crypto": "0.0.3",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.19",
+    "morgan": "^1.7.0",
+    "should": "^9.0.0"
+  }
+}
