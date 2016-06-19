@@ -2,6 +2,8 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const encryptString = require('./../helpers/encryptString')
+const jwt = require('jsonwebtoken')
+const config = require('./../config.js')
 
 let userSchema = new Schema({
   username: { type: String, required: true },
@@ -53,6 +55,25 @@ userSchema.statics.removeById = function(userId, callback) {
   } else {
     this.remove({ _id: userId }, (err, doc) => {
       callback(err, doc)
+    })
+  }
+}
+
+userSchema.statics.login = function(username, password, callback) {
+  if (!username || !password) {
+    callback(new Error('username or password are required'), null)
+  } else {
+    encryptString(password, encryptedPassword => {
+      this.findOne({ username: username, password: encryptedPassword }, { password: 0 }, (err, doc) => {
+        if (err) {
+          callback(err, null)
+        } else if (doc) {
+          let token = jwt.sign(doc, config.secretKey, { expiresIn: config.tokenExpireIn })
+          callback(null, { user: doc, token: token })
+        } else if (!doc) {
+          callback(new Error('Username or password invalid'), null)
+        }
+      })
     })
   }
 }

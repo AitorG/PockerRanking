@@ -66,7 +66,6 @@ describe('UserSpec', () => {
   })
 
   describe('removeById()', () => {
-
     it('Should return n:1 and ok:1 when delete a user', (done) => {
       let userToCreate = {
         username: Math.random().toString(),
@@ -90,7 +89,65 @@ describe('UserSpec', () => {
         done()
       })
     })
+  })
 
+  describe('login()', () => {
+    it('Should return a user doc if login is correct', (done) => {
+      let loginInfo = {
+        username: 'zamarrowski',
+        password: 'lolazo03',
+      }
+      User.login(loginInfo.username, loginInfo.password, (err, doc) => {
+        doc.user.username.should.be.equal('zamarrowski')
+        done()
+      })
+    })
+
+    it('Should return a user doc without password if login is correct', (done) => {
+      let loginInfo = {
+        username: 'zamarrowski',
+        password: 'lolazo03',
+      }
+      User.login(loginInfo.username, loginInfo.password, (err, doc) => {
+        doc.user.username.should.be.equal('zamarrowski')
+        should.not.exist(doc.user.password)
+        done()
+      })
+    })
+
+    it('Should return a token if login is correct', (done) => {
+      let loginInfo = {
+        username: 'zamarrowski',
+        password: 'lolazo03',
+      }
+      User.login(loginInfo.username, loginInfo.password, (err, doc) => {
+        doc.user.username.should.be.equal('zamarrowski')
+        should.exist(doc.token)
+        done()
+      })
+    })
+
+    it('Should return a error if password or username are null', (done) => {
+      let loginInfo = {
+        username: null,
+        password: 'lolazo03',
+      }
+      User.login(loginInfo.username, loginInfo.password, (err, doc) => {
+        err.message.should.be.equal('username or password are required')
+        done()
+      })
+    })
+
+    it('Should return a error if user not found', (done) => {
+      let loginInfo = {
+        username: 'trytofindthisusername',
+        password: 'trytofindthisusername',
+      }
+      User.login(loginInfo.username, loginInfo.password, (err, doc) => {
+        err.message.should.be.equal('Username or password invalid')
+        done()
+      })
+    })
 
   })
 
