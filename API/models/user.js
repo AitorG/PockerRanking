@@ -47,4 +47,14 @@ userSchema.statics.checkUsername = function(username, callback) {
   })
 }
 
+userSchema.statics.removeById = function(userId, callback) {
+  if (!userId) {
+    callback(new Error('userId is required'), null)
+  } else {
+    this.remove({ _id: userId }, (err, doc) => {
+      callback(err, doc)
+    })
+  }
+}
+
 module.exports = mongoose.model('User', userSchema)

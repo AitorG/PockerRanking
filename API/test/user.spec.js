@@ -64,4 +64,34 @@ describe('UserSpec', () => {
       })
     })
   })
+
+  describe('removeById()', () => {
+
+    it('Should return n:1 and ok:1 when delete a user', (done) => {
+      let userToCreate = {
+        username: Math.random().toString(),
+        password: 'password',
+        admin: false,
+        points: null,
+        lastGame: null
+      }
+      User.createUser(userToCreate, (err, user) => {
+        User.removeById(user._id, (err, response) => {
+          response.result.ok.should.be.equal(1)
+          response.result.n.should.be.equal(1)
+          done()
+        })
+      })
+    })
+
+    it('Should return error if userId is null', (done) => {
+      User.removeById(null, (err, response) => {
+        err.message.should.be.equal('userId is required')
+        done()
+      })
+    })
+
+
+  })
+
 })
