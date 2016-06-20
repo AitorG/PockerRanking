@@ -6,6 +6,7 @@
     * [Create User](#create-user)
     * [Get Users](#get-users)
     * [Delete User](#delete-user)
+    * [Change Username](#change-username)
     * [Login](#login)
 
 ## User Routes
@@ -50,6 +51,23 @@ input: none,
 output: {
   n: Number,
   ok: Number,
+}
+```
+### Change Username
+```
+route: '/user/changeusername',
+method: PUT,
+auth: true,
+input: {
+  username: String
+},
+output: {
+  _id: String,
+  username: String,
+  password: String,
+  admin: Boolean,
+  points: Number,
+  lastGame: Date
 }
 ```
 ### Login

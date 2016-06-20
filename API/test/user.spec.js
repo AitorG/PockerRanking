@@ -166,7 +166,41 @@ describe('UserSpec', () => {
         done()
       })
     })
+  })
 
+  describe('updateUsername', () => {
+    it('Should return a user with the same username', (done) => {
+      let userToCreate = {
+        username: Math.random().toString(),
+        password: Math.random().toString(),
+        admin: false,
+        points: null,
+        lastGame: null
+      }
+      let newUsername = Math.random().toString()
+      User.createUser(userToCreate, (err, user) => {
+        User.updateUsername(newUsername, user._id, (err, updatedUser) => {
+          updatedUser.username.should.be.equal(newUsername)
+          User.removeById(updatedUser._id, (err, doc) => {
+            done()
+          })
+        })
+      })
+    })
+
+    it('Should return a error if username is null', (done) => {
+      User.updateUsername(null, null, (err, updatedUser) => {
+        err.message.should.be.equal('Username and userId is required')
+        done()
+      })
+    })
+
+    it('Should return a error if userId is null', (done) => {
+      User.updateUsername(null, null, (err, updatedUser) => {
+        err.message.should.be.equal('Username and userId is required')
+        done()
+      })
+    })
   })
 
 })

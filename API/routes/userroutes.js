@@ -24,6 +24,16 @@ router.post('/', (req, res, next) => {
   })
 })
 
+router.put('/changeusername', checkToken, (req, res, next) => {
+  User.updateUsername(req.body.username, req.user._doc._id, (err, user) => {
+    if (err) {
+      next(err)
+    } else {
+      res.json(user)
+    }
+  })
+})
+
 router.delete('/', checkToken, (req, res, next) => {
   User.removeById(req.user._doc._id, (err, doc) => {
     if (err) {

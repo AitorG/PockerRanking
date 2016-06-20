@@ -34,7 +34,7 @@ userSchema.statics.createUser = function(userToCreate, callback) {
                 })
               })
             } else {
-                callback(new Error('Points and lastgame should be null'), null)
+              callback(new Error('Points and lastgame should be null'), null)
             }
           }
         }
@@ -86,6 +86,23 @@ userSchema.statics.getUsers = function(callback) {
       callback(null, users)
     }
   })
+}
+
+userSchema.statics.updateUsername = function(username, userId, callback) {
+  if (username && userId) {
+    this.findById(userId, (err, doc) => {
+      if (err) {
+        callback(err, null)
+      } else {
+        doc.username = username
+        doc.save((err, doc) => {
+          callback(err, doc)
+        })
+      }
+    })
+  } else {
+    callback(new Error('Username and userId is required'), null)
+  }
 }
 
 module.exports = mongoose.model('User', userSchema)
