@@ -34,6 +34,16 @@ router.put('/changeusername', checkToken, (req, res, next) => {
   })
 })
 
+router.put('/changepassword', checkToken, (req, res, next) => {
+  User.changePassword(req.body.oldPassword, req.body.newPassword, req.user._doc._id, (err, user) => {
+    if (err) {
+      next(err)
+    } else {
+      res.json(user)
+    }
+  })
+})
+
 router.delete('/', checkToken, (req, res, next) => {
   User.removeById(req.user._doc._id, (err, doc) => {
     if (err) {

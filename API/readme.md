@@ -7,6 +7,7 @@
     * [Get Users](#get-users)
     * [Delete User](#delete-user)
     * [Change Username](#change-username)
+    * [Change Password](#change-password)
     * [Login](#login)
 
 ## User Routes
@@ -60,6 +61,24 @@ method: PUT,
 auth: true,
 input: {
   username: String
+},
+output: {
+  _id: String,
+  username: String,
+  password: String,
+  admin: Boolean,
+  points: Number,
+  lastGame: Date
+}
+```
+### Change Password
+```
+route: '/user/changepassword',
+method: PUT,
+auth: true,
+input: {
+  newPassword: String,
+  oldPassword: String,
 },
 output: {
   _id: String,

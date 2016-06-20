@@ -203,4 +203,64 @@ describe('UserSpec', () => {
     })
   })
 
+  describe('Change password', () => {
+    it('Should return a user with the new password', (done) => {
+      let userToCreate = {
+        username: Math.random().toString(),
+        password: Math.random().toString(),
+        admin: false,
+        points: null,
+        lastGame: null
+      }
+      let newPassword = Math.random().toString()
+      User.createUser(userToCreate, (err, user) => {
+        User.changePassword(userToCreate.password, newPassword, user._doc._id, (err, updatedUser) => {
+          updatedUser.password.should.not.equal(user.password)
+          User.removeById(updatedUser._id, (err, doc) => {
+            done()
+          })
+        })
+      })
+    })
+
+    it('Should return a error if oldpassword is incorrect', (done) => {
+      let userToCreate = {
+        username: Math.random().toString(),
+        password: Math.random().toString(),
+        admin: false,
+        points: null,
+        lastGame: null
+      }
+      let newPassword = Math.random().toString()
+      User.createUser(userToCreate, (err, user) => {
+        User.changePassword(user.password, 'distinta', user._doc._id, (err, user) => {
+          err.message.should.be.equal('Password is incorrect')
+          done()
+        })
+      })
+    })
+
+    it('Should return a error if password is null', (done) => {
+      User.changePassword(null, null, null, (err, user) => {
+        err.message.should.be.equal('Password, newPassword and userId are required')
+        done()
+      })
+    })
+
+    it('Should return a error if newPassword is null', (done) => {
+      User.changePassword(null, null, null, (err, user) => {
+        err.message.should.be.equal('Password, newPassword and userId are required')
+        done()
+      })
+    })
+
+    it('Should return a error if userId is null', (done) => {
+      User.changePassword(null, null, null, (err, user) => {
+        err.message.should.be.equal('Password, newPassword and userId are required')
+        done()
+      })
+    })
+
+  })
+
 })

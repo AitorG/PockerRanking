@@ -105,4 +105,29 @@ userSchema.statics.updateUsername = function(username, userId, callback) {
   }
 }
 
+userSchema.statics.changePassword = function(oldPassword, newPassword, userId, callback) {
+  if (oldPassword && newPassword && userId) {
+    this.findById(userId, (err, user) => {
+      if (err) {
+        callback(err, null)
+      } else {
+        encryptString(oldPassword, (encryptedOldPassword) => {
+          if (encryptedOldPassword == user.password) {
+            encryptString(newPassword, (encryptedNewPassword) => {
+              user.password = encryptedNewPassword
+              user.save((err, doc) => {
+                callback(err, doc)
+              })
+            })
+          } else {
+            callback(new Error('Password is incorrect'), null)
+          }
+        })
+      }
+    })
+  } else {
+    callback(new Error('Password, newPassword and userId are required'), null)
+  }
+}
+
 module.exports = mongoose.model('User', userSchema)
