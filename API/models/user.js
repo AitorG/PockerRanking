@@ -78,4 +78,14 @@ userSchema.statics.login = function(username, password, callback) {
   }
 }
 
+userSchema.statics.getUsers = function(callback) {
+  this.find({}, { password: 0 }, (err, users) => {
+    if (err) {
+      callback(err, null)
+    } else {
+      callback(null, users)
+    }
+  })
+}
+
 module.exports = mongoose.model('User', userSchema)

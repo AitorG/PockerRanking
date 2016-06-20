@@ -4,6 +4,16 @@ const router = express.Router()
 let User = require('./../models/user.js')
 let checkToken = require('./../middlewares/checkToken.js')
 
+router.get('/', (req, res, next) => {
+  User.getUsers((err, users) => {
+    if (err) {
+      next(err)
+    } else {
+      res.json(users)
+    }
+  })
+})
+
 router.post('/', (req, res, next) => {
   User.createUser(req.body, (err, user) => {
     if (err) {

@@ -4,6 +4,7 @@
 
 1. [UserRoutes](#user-routes)
     * [Create User](#create-user)
+    * [Get Users](#get-users)
     * [Delete User](#delete-user)
     * [Login](#login)
 
@@ -23,6 +24,22 @@ output: {
   password: String,
   admin: Boolean
 }
+```
+### Get Users
+```
+route: '/user',
+method: GET,
+auth: false,
+input: none,
+output: [
+  {
+    id: String,
+    username: String,
+    admin: Boolean,
+    points: Number,
+    lastGame: Date
+  }
+]
 ```
 ### Delete User
 ```
@@ -49,7 +66,7 @@ output: {
     username: String,
     admin: Boolean,
     points: Number,
-    lastGame: Number
+    lastGame: Date
   },
   token: String
 }

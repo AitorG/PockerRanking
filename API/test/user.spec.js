@@ -151,4 +151,22 @@ describe('UserSpec', () => {
 
   })
 
+  describe('getUsers', () => {
+    it('Should return an array of users', (done) => {
+      User.getUsers((err, users) => {
+        users.length.should.be.above(0)
+        users.should.be.instanceof(Array)
+        done()
+      })
+    })
+
+    it('Should return an array of users without passwords', (done) => {
+      User.getUsers((err, users) => {
+        should.not.exist(users[0].password)
+        done()
+      })
+    })
+
+  })
+
 })
